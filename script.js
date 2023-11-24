@@ -38,8 +38,8 @@ fetch('data.json')
 
             markers[data.id].on('click', () => {
                 // Open Google Maps with the marker's location
-                const googleMapsUrl = `https://www.google.com/maps?q=${data.lat},${data.lng}`;
-                window.open(googleMapsUrl, '_blank');
+                const geoUri = `geo:${data.lat},${data.lng}?q=${data.lat},${data.lng}(${data.name})`;
+                window.open(geoUri, '_system');
             });
 
 
