@@ -10,28 +10,28 @@ var jsonData = [
     {
         "id": 2,
         "name": "Ideal Hostel",
-        "vacancy": 20,
+        "vacancy": 8,
         "lat": 8.54733,
         "lng": 76.90581
     },
     {
         "id": 3,
         "name": "Careebia Hostel",
-        "vacancy": 30,
+        "vacancy": 8,
         "lat": 8.54748,
         "lng": 76.90561
     },
     {
         "id": 4,
         "name": "Angels Beth Hostel",
-        "vacancy": 40,
+        "vacancy":12,
         "lat": 8.54774,
         "lng": 76.90808
     },
     {
         "id": 5,
         "name": "Brothers Lodge",
-        "vacancy": 50,
+        "vacancy": 7,
         "lat": 8.54888,
         "lng": 76.90769
     }
