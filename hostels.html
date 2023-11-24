@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <style>
         body{
             font-family: 'Poppins', sans-serif;
@@ -18,7 +19,7 @@
         }
         #map{
             width : 50vw;
-            height : max(50vh,50vw);
+            height : 50vh;
             border-radius: 10px;
         }
 
@@ -70,6 +71,14 @@
             }
 
         }
+
+        .main{
+            padding: 3rem 2rem;
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 
 </head>
@@ -94,23 +103,18 @@
           </div>
         </div>
       </nav>
-
-      <div class="Hero" >
-        <h1> <b>COLLEGE UNION 2023 </b> </h1>
-        <h4>Welcome to our website, where you can find a comprehensive list of private hostels near your college in Trivandrum, Kerala, India. Our website provides you with all the information you need to make an informed decision about where to stay.</h4>
-
-
-      </div>
-      <div class="container">
-          <div id="map">    
+      <div class="main">
+        <div class="left">
+            
+            <div id="map"></div>
+        </div>
+        <div class="right">
+        </div>
 
       </div>
-
-
-    </div>
     
 </body>
-<script>
+<!-- <script>
     const map = L.map('map');   
     map.setView([8.5445,76.9041],17) 
     
@@ -121,5 +125,6 @@
     var marker = L.marker([8.54311,76.90335]).addTo(map);
     marker.bindPopup("<b>Mens Hostel , CET <b>");
 
-</script>
+</script> -->
+<script src="./script.js"></script>
 </html>
