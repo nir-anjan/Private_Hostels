@@ -78,7 +78,10 @@
             gap: 3rem;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
+
+
     </style>
 
 </head>
@@ -108,23 +111,19 @@
             
             <div id="map"></div>
         </div>
-        <div class="right">
+        <div class="rightcont">
+            <div class="search-container">
+                <label for="searchInput">Search:</label>
+                <input type="text" id="searchInput" oninput="searchHostels()" />
+            </div>
+            <div class="right" id="right">
+                
+        </div>
+        
         </div>
 
       </div>
     
 </body>
-<!-- <script>
-    const map = L.map('map');   
-    map.setView([8.5445,76.9041],17) 
-    
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-    }).addTo(map);
-
-    var marker = L.marker([8.54311,76.90335]).addTo(map);
-    marker.bindPopup("<b>Mens Hostel , CET <b>");
-
-</script> -->
 <script src="./script.js"></script>
 </html>
