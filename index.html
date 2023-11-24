@@ -1,125 +1,286 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
-        body{
+        body {
             font-family: 'Poppins', sans-serif;
 
         }
-        #map{
-            width : 50vw;
-            height : max(50vh,50vw);
+
+        #map {
+
+            height: max(50vh, 50vw);
             border-radius: 10px;
+            width: 100%;
+            margin-bottom: 10%;
         }
 
-        #logo{
+        #logo {
             height: 5em;
             filter: invert(100%);
         }
-        .Hero{
+
+        .Hero {
             padding: 2rem 3rem;
             color: white;
-            background:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('./assets/bgimg.jpg');
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('./assets/bgimg.jpg');
             background-position: center;
             background-size: cover;
-            height: 60vh;
-            display: flex ;
+            height: 70vh;
+            display: flex;
+
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+        }
+
+        .Hero h4 {
+            font-size: min(4.5vw, 24px);
+            width: 60%;
+            
+        }
+
+        .Hero h1 {
+            font-size: min(4.5vw, 30px);
+            width: 60%;
+            
+
+
+        }
+
+
+        .container h1 {
+            display: flex;
+            justify-content: center;
+            padding-left: 2.5rem;
+        }
+
+        .container h2 {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 5%;
+            background-color: black;
+            display: flex;
+            padding: 5%;
+            justify-content: space-between;
+            color: white;
+
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.1rem 0.1rem;
+            border-radius: 10px;
+            border: none;
+            overflow: hidden;
+            background: rgb(39, 34, 34);
+            color: #fff;
+            text-decoration:underline rgb(39, 34, 34);
+        }
+        .button p{
+            padding-top: 0.2re;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .button-text {
+            transform: translateX(15px);
+            font-size: 1em;
+            font-weight: 700;
+            transition-duration: 0.3s;
+          
+        }
+
+        .iconer {
+            transform: translateY(35px);
+            transition-duration: 0.3s;
+        }
+
+        .button:hover .button-text {
+            transform: translateX(0px);
+        }
+
+        .button:hover .iconer {
+            transform: translateY(0px);
         }
 
 
 
-        @media screen and (max-width: 480px) {
-            #logo{
+        .selection {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .about {
+            width: 50%;
+        }
+
+        .about h3 {
+            font-size: 100%;
+        }
+
+        .contact h3 {
+            font-size: 100%;
+        }
+
+        .footer hr {
+            border-top: 1px solid;
+        }
+
+        .copyright {
+            background-color: black;
+            color: white;
+            border-top: 1px solid white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .navbar-toggler {
+            padding: 0.2rem;
+            font-size: .9rem;
+            line-height: 1;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            transition: box-shadow .15s ease-in-out;
+        }
+
+        @media screen and (max-width: 450px) {
+            #logo {
                 height: 3rem;
             }
-            .title{
+
+            .title {
                 font-size: 1rem;
-            
-            }
-            h6{
-                font-size: 0.50rem;
-            
-            }
-        }
-        @media screen and (max-width: 300px) {
-            #logo{
-                height: 1.75rem;
-            }
-            .title{
-                font-size: 0.75rem;
-            
-            }
-            h6{
-                font-size: 0.50rem;
-            
-            }
-            .navbar-toggler-icon{
-                height: 1.75rem;
+
             }
 
+            h6 {
+                font-size: 0.50rem;
+
+            }
         }
     </style>
 
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid" >
+        <div class="container-fluid">
             <div style="display: flex;align-items: center;gap:1rem;">
-                <img id="logo" src="./assets/Cet_emblem.png" alt="" >
-                <a class="navbar-brand" style="margin-right: 0;"  href="#"><h2 style="margin:  0 0;text-wrap: wrap;" class="title"> <b>PRIVATE HOSTELS </b> </h2><h6 style="text-wrap: wrap;">COLLEGE OF ENGINEERING TRIVANDRUM</h6></a>
+                <img id="logo" src="./assets/Cet_emblem.png" alt="">
+                <a class="navbar-brand" style="margin-right: 0;" href="/">
+                    <h2 style="margin:  0 0;text-wrap: wrap;" class="title"> <b>PRIVATE HOSTELS </b> </h2>
+                    <h6 style="text-wrap: wrap;">COLLEGE OF ENGINEERING TRIVANDRUM</h6>
+                </a>
             </div>
-            
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: end; padding-right: 3rem;">
-            <div class="navbar-nav" style="gap: 2rem;">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup"
+                style="justify-content: end; padding-right: 3rem;">
+                <div class="navbar-nav" style="gap: 2rem;">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="./hostels.html">Hostels</a>
+                    <a class="nav-link" href="./hostels.html">PGs</a>
+                    <a class="nav-link" href="#about">About Us</a>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
 
-      <div class="Hero" >
+    <div class="Hero">
         <h1> <b>COLLEGE UNION 2023 </b> </h1>
-        <h4>Welcome to our website, where you can find a comprehensive list of private hostels near your college in Trivandrum, Kerala, India. Our website provides you with all the information you need to make an informed decision about where to stay.</h4>
+        <h4>Welcome to our website, where you can find a comprehensive list of private hostels near your college in
+            Trivandrum, Kerala, India. Our website provides you with all the information you need to make an informed
+            decision about where to stay.</h4>
+            <a href="/hostels.html">
+                
+                    <button class="button" >
+                        <p class="button-text" >Hostels</p>
+                        <p class="iconer"><svg height="24" width="18" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                    fill="currentColor"></path>
+                            </svg></p>
+                    </button>
+               
+            </a>
+    </div>
+    <div class="container">
+        <h2>Overview</h2>
+        <div id="map">
 
+        </div>
 
-      </div>
-      <div class="container">
-          <div id="map">    
+    </div>
+    <div class="footer">
 
-      </div>
+        <div id="about" class="about">
+            <h3>About Us</h3>
+            <h6>Welcome to the official website of Private Hostel Committee, an initiative taken by Afin Shafi M
+                (University Union Councillor, College Union 23-34).</h6>
+
+        </div>
+        <div class="contact">
+            <h3>Contact</h3>
+            <h6>Afin : 9188370967</h6>
+            <h6>Basil : 9495121351</h6>
+            <h6></h6>
+
+        </div>
 
 
     </div>
-    
+
+    <div class="copyright">
+        <h6>copyright@cetcollegeunion 2023</h6>
+    </div>
+
+    </div>
+
 </body>
 <script>
-    const map = L.map('map');   
-    map.setView([8.5445,76.9041],17) 
-    
+    const map = L.map('map');
+    map.setView([8.5445, 76.9041], 17)
+
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
     }).addTo(map);
 
-    var marker = L.marker([8.54311,76.90335]).addTo(map);
+    var marker = L.marker([8.54311, 76.90335]).addTo(map);
     marker.bindPopup("<b>Mens Hostel , CET <b>");
 
 </script>
+
 </html>
