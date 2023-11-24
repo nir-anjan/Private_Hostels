@@ -54,16 +54,25 @@
         }
 
         .Hero h4 {
-            font-size: min(4.5vw, 24px);
-            width: 60%;
+
+            width: 80%;
             
+        }
+        
+        @media screen and (max-width: 600px) {
+            h4{
+                font-size: 1.25rem;
+            }
         }
 
         .Hero h1 {
-            font-size: min(4.5vw, 30px);
-            width: 60%;
-            
 
+            width: 60%;
+            text-wrap: nowrap;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            
 
         }
 
