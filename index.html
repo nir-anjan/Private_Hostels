@@ -48,19 +48,23 @@
                 font-size: 0.8rem;
             }
             #logo{
-                height: 3em;
+                height: 3rem;
             }
-
+        }
+        @media screen and (max-width: 400) {
+            .nav-brand{
+                font-size: 0.5rem;
+            }
         }
     </style>
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div class="container-fluid" style="flex-wrap: nowrap;">
             <div style="display: flex;align-items: center;gap:1rem;">
                 <img id="logo" src="./assets/Cet_emblem.png" alt="" >
-          <a class="navbar-brand" href="#"><h2 style="margin:  0 0;text-wrap: wrap;"> <b>PRIVATE HOSTEL LIST </b> </h2><h6 style="text-wrap: wrap;">COLLEGE OF ENGINEERING TRIVANDRUM</h6></a>
+                <a class="navbar-brand" href="#"><h2 style="margin:  0 0;text-wrap: wrap;"> <b>PRIVATE HOSTELS </b> </h2><h6 style="text-wrap: wrap;">COLLEGE OF ENGINEERING TRIVANDRUM</h6></a>
             </div>
             
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
