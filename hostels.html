@@ -15,11 +15,13 @@
     <style>
         body{
             font-family: 'Poppins', sans-serif;
+            transition: all 1s ease;
+            background-color: #e5e5e5;
 
         }
         #map{
-            width :min( 70vw, 70vh);
-            height : min(50vh,80vw);
+            width :50vw;
+            height : 80vh;
             border-radius: 10px;
         }
 
@@ -27,21 +29,16 @@
             height: 5em;
             filter: invert(100%);
         }
-        .Hero{
-            padding: 2rem 3rem;
-            color: white;
-            background:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('./assets/bgimg.jpg');
-            background-position: center;
-            background-size: cover;
-            height: 60vh;
-            display: flex ;
-            flex-direction: column;
-            justify-content: center;
-        }
 
 
 
-        @media screen and (max-width: 480px) {
+
+        @media screen and (max-width: 600px) {
+            #map
+            {
+                width :min( 70vw, 70vh);
+                height : min(50vh,80vw);
+            }
             #logo{
                 height: 3rem;
             }
@@ -53,6 +50,7 @@
                 font-size: 0.50rem;
             
             }
+        
         }
         @media screen and (max-width: 300px) {
             #logo{
@@ -73,14 +71,89 @@
         }
 
         .main{
-            padding: 3rem 2rem;
+            
+            padding: 0rem 2rem;
             display: flex;
             gap: 3rem;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+            min-height: 90vh;
         }
+        .card {
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            width: 100%;
+          }
 
+
+         ::-webkit-scrollbar {
+            display: none;
+          }
+
+
+          .rightcont{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: flex-start;
+            align-items: flex-start;
+          }
+
+          .right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+          }
+
+          .coolinput button{
+            border: none;
+            background: none;
+            color: #8b8ba7;
+          }
+
+          .coolinput{
+            --timing: 0.3s;
+            --width-of-input: 100%;
+            --height-of-input: 40px;
+            --border-height: 2px;
+            --input-bg: #fff;
+            --border-color: #2f2ee9;
+            --border-radius: 30px;
+            --after-border-radius: 1px;
+            position: relative;
+            width: var(--width-of-input);
+            height: var(--height-of-input);
+            display: flex;
+            align-items: center;
+            padding-inline: 0.8em;
+            border-radius: var(--border-radius);
+            transition: border-radius 0.5s ease;
+            background: var(--input-bg,#fff);
+          }
+          .input {
+            font-size: 0.9rem;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            padding-inline: 0.5em;
+            padding-block: 0.7em;
+            border: none;
+          }
+          .coolinput:before {
+            content: "";
+            position: absolute;
+            background: var(--border-color);
+            transform: scaleX(0);
+            transform-origin: center;
+            width: 100%;
+            height: var(--border-height);
+            left: 0;
+            bottom: 0;
+            border-radius: 1px;
+            transition: transform var(--timing) ease;
+          }
 
     </style>
 
@@ -107,21 +180,25 @@
         </div>
       </nav>
       <div class="main">
-        <div class="left">
-            
-            <div id="map"></div>
+          <div class="rightcont">
+              <div class="coolinput search-container " id="coolinput">
+                <button>
+                    <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                  <input placeholder="Search here..." class="input" type="text" id="searchInput" oninput="searchHostels()" />
+                  <button class="reset" type="reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                </div>
+                <div class="right" id="right"></div>
         </div>
-        <div class="rightcont">
-            <div class="search-container">
-                <label for="searchInput">Search:</label>
-                <input type="text" id="searchInput" oninput="searchHostels()" />
-            </div>
-            <div class="right" id="right">
-                
+        <div class="left">        
+                <div id="map"></div>
         </div>
-        
-        </div>
-
       </div>
     
 </body>
