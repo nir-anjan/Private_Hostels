@@ -127,3 +127,5 @@ function searchHostels() {
     renderHostels(filteredHostels);
 }
     renderHostels(jsonData);
+
+    
