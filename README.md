@@ -21,7 +21,7 @@ This web application is designed to assist students, especially new admissions, 
 - **User-Friendly Interface:** The website offers a simple and intuitive interface for a seamless user experience.
 
 ## Screenshots
-![Screenshot 1](images/hostel app_page-0001.jpg)
+![Screenshot 1](images/hostel app_page-0001.png)
 
 
 ![Screenshot 2](images/hostel app_page-0001.jpg)
